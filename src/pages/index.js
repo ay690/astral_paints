@@ -1,6 +1,7 @@
 import client from "@/lib/apollo-client";
 import { GET_HOME_PAGE_DATA } from "@/lib/queries";
-import { Banner, Blogs } from "@/components";
+import { Banner, Blogs, Navbar } from "@/components";
+import "../app/globals.css";
 
 export async function getStaticProps() {
   const { data } = await client.query({
@@ -18,8 +19,9 @@ export async function getStaticProps() {
 export default function Home({ homepageData, blogs }) {
   return (
     <div>
-      <Banner banners={homepageData.banners} />
-      <Blogs blogs={blogs} />
+      <Navbar />
+      {/* <Banner banners={homepageData.banners} />
+      <Blogs blogs={blogs} /> */}
     </div>
   );
 }

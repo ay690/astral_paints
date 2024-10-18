@@ -32,7 +32,7 @@ const Blogs = ({ blogs }) => {
             <div className="p-4">
               <h3 className="text-lg font-semibold">
                 <Link href={`/blogs/${blog.slug}`}>
-                  <span className="text-blue-600 hover:underline">
+                  <span className="textblue-600 hover:underline">
                     {blog.title}
                   </span>
                 </Link>

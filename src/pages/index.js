@@ -1,6 +1,6 @@
 import client from "@/lib/apollo-client";
 import { GET_HOME_PAGE_DATA } from "@/lib/queries";
-import { Banner, Blogs, Navbar, Footer, About, Category } from "@/components";
+import { Banner, Service, Blogs, Navbar, Footer, About, Category } from "@/components";
 import "../app/globals.css";
 
 export async function getStaticProps() {
@@ -27,6 +27,7 @@ export default function Home({ homepageData, blogs, about, categories }) {
       <Banner banners={homepageData.banners} />
       <About about={about} />
       <Category categories={categories} />
+      <Service />
       {/* <Blogs blogs={blogs} /> */}
       <Footer />
     </div>

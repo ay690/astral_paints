@@ -20,8 +20,8 @@ export default function Home({ homepageData, blogs }) {
   return (
     <div>
       <Navbar />
-      {/* <Banner banners={homepageData.banners} />
-      <Blogs blogs={blogs} /> */}
+      <Banner banners={homepageData.banners} />
+      {/* <Blogs blogs={blogs} /> */}
       <Footer />
     </div>
   );

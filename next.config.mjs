@@ -4,6 +4,7 @@ const nextConfig = {
     domains: [
       "astralpaints.kwebmakerdigitalagency.com",
       "astral-paints-landing.vercel.app",
+      "placeholder.pics",
     ],
   },
 };

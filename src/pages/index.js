@@ -31,15 +31,21 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ homepageData, blogs, about, categories, dealer }) {
+export default function Home({
+  homepageData,
+  blogs,
+  about,
+  categories,
+  dealer,
+}) {
   return (
     <div>
       <Navbar />
       <Banner banners={homepageData.banners} />
       <About about={about} />
       <Category categories={categories} />
-      <Colours />
       <Service />
+      <Colours />
       <Dealer dealer={dealer} />
       {/* <Blogs blogs={blogs} /> */}
       <Footer />

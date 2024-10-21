@@ -35,7 +35,7 @@ const Category = ({ categories }) => {
                 {categories[0].title}
               </h3>
               <div className="flex justify-end">
-                <button className="hidden px-2 py-1 font-semibold text-white transition-all duration-300 ease-in-out bg-transparent border border-white rounded-full cursor-pointer text-md group-hover:flex">
+                <button className="hidden px-2 py-1 font-[300] text-white transition-all duration-300 ease-in-out bg-transparent border border-white rounded-full cursor-pointer text-md group-hover:flex">
                   Read More
                 </button>
               </div>
@@ -58,7 +58,7 @@ const Category = ({ categories }) => {
                 <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 text-white transition-all duration-300 ease-in-out group-hover:bg-yellow-700">
                   <h3 className="text-lg font-bold">{category.title}</h3>
                   <div className="hidden cursor-pointer group-hover:flex">
-                    <button className="px-2 py-1 font-semibold transition-all duration-300 ease-in-out bg-transparent border border-white rounded-full cursor-pointer text-md hover:bg-white hover:text-gold-500">
+                    <button className="px-2 py-1 font-[300] transition-all duration-300 ease-in-out bg-transparent border border-white rounded-full cursor-pointer text-md hover:bg-white hover:text-gold-500">
                       Read More
                     </button>
                   </div>

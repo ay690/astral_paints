@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white py-12">
+    <footer className="py-12 text-white bg-blue-900 -my-96">
       {/* Top Section: Group Companies */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center items-center space-x-8 pb-12 border-b border-gray-400">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center pb-12 space-x-8 border-b border-gray-400">
           <Image
             src="https://astral-paints-landing.vercel.app/_next/image?url=%2FImages%2Fcompany%2Fc4.png&w=828&q=75"
             alt="Astral Pipes"
@@ -46,9 +46,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section: Links and Contact */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Newsletter Section */}
-        <div className="flex gap-11 p-12 items-end justify-between">
+        <div className="flex items-end justify-between p-12 gap-11">
           <Image
             src="https://astral-paints-landing.vercel.app/_next/image?url=%2FImages%2Flogo.png&w=256&q=75"
             width={150}
@@ -57,7 +57,7 @@ const Footer = () => {
           />
           <div className="flex gap-5">
             <div className="flex-col">
-              <h4 className="font-semibold text-lg mb-4">
+              <h4 className="mb-4 text-lg font-semibold">
                 Sign Up To Our Newsletter
               </h4>
               <p className="mb-4">Lorem ipsum dolor sit amet consectetur.</p>
@@ -66,19 +66,19 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter Email Address"
-                className="bg-transparent text-white px-2 py-2 w-full rounded-l-md outline-none border-gray-600"
+                className="w-full px-2 py-2 text-white bg-transparent border-gray-600 outline-none rounded-l-md"
               />
-              <button className="bg-blue-500 px-2 py-2 rounded-r-md">
+              <button className="px-2 py-2 bg-blue-500 rounded-r-md">
                 Enquire Now
               </button>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-12 text-sm">
+        <div className="grid grid-cols-1 gap-8 pt-12 text-sm md:grid-cols-4">
           {/* Contact Section */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Reach Us</h4>
+            <h4 className="mb-4 text-lg font-semibold">Reach Us</h4>
             <p>
               #417/418, 11th Cross, 4th Phase, Peenya Industrial Area,
               <br />
@@ -89,10 +89,10 @@ const Footer = () => {
           </div>
 
           {/* Categories and Services Section */}
-          <div className="ml-28 grid grid-cols-4 gap-36">
+          <div className="grid grid-cols-4 ml-28 gap-36">
             {/* Links Section */}
             <div>
-              <h4 className="font-semibold text-lg mb-4">About</h4>
+              <h4 className="mb-4 text-lg font-semibold">About</h4>
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="hover:underline">
@@ -113,7 +113,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <h4 className="font-semibold text-lg mb-4">Category</h4>
+              <h4 className="mb-4 text-lg font-semibold">Category</h4>
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="hover:underline">
@@ -143,7 +143,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-lg mb-4">Services</h4>
+              <h4 className="mb-4 text-lg font-semibold">Services</h4>
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="hover:underline">
@@ -169,20 +169,20 @@ const Footer = () => {
             </div>
 
             <div>
-              <h4 className="font-semibold text-lg mb-4">Downloads</h4>
+              <h4 className="mb-4 text-lg font-semibold">Downloads</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="hover:underline font-semibold ">
+                  <a href="#" className="font-semibold hover:underline ">
                     Become A Dealer
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline font-semibold ">
+                  <a href="#" className="font-semibold hover:underline ">
                     Blogs
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline font-semibold ">
+                  <a href="#" className="font-semibold hover:underline ">
                     Contact
                   </a>
                 </li>
@@ -192,7 +192,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Links */}
-        <div className="mt-12 border-t border-gray-400 pt-8 flex justify-between items-center">
+        <div className="flex items-center justify-between pt-8 mt-12 border-t border-gray-400">
           <p>© 2024 ALL RIGHTS RESERVED</p>
           <div className="flex space-x-4">
             <a href="#" className="hover:underline">

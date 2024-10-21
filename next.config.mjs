@@ -5,6 +5,9 @@ const nextConfig = {
       "astralpaints.kwebmakerdigitalagency.com",
       "astral-paints-landing.vercel.app",
       "placeholder.pics",
+      "d3f1ozwy5sre8y.cloudfront.net",
+      "berger-dev-s3-bucket.s3.ap-south-1.amazonaws.com",
+      "media.benjaminmoore.com"
     ],
   },
 };

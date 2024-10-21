@@ -47,7 +47,7 @@ export default function Home({
       <Service />
       <Colours />
       <Dealer dealer={dealer} />
-      {/* <Blogs blogs={blogs} /> */}
+      <Blogs blogs={blogs} />
       <Footer />
     </div>
   );

@@ -42,7 +42,7 @@ const Colours = () => {
               style={{ backgroundColor: colour.color }}
             >
               <div
-                className="absolute w-10 h-10 border-2 border-white rounded-md"
+                className="absolute hidden w-10 h-10 border-2 border-white rounded-md lg:block" // Hide on small and medium screens
                 style={{
                   top: "43%",
                   left: "44%",

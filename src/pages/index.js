@@ -26,7 +26,7 @@ export async function getStaticProps() {
       about: data.pages.nodes[0].homepage || null,
       categories: data.pages.nodes[0].homepage.categories || [],
       dealer: data.pages.nodes[0].homepage || null,
-      blogs: data.blogs.nodes,
+      blogs: data.blogs.nodes || [],
     },
   };
 }

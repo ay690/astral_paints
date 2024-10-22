@@ -28,6 +28,18 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  // Define an array with the items and their respective href values
+  const menuItems = [
+    { name: "About", href: "#about-section" },
+    { name: "Category", href: "#category-section" },
+    { name: "Services", href: "#services-section" },
+    { name: "Colours", href: "#colours-section" },
+    { name: "Downloads", href: "#footer" },
+    { name: "Become A Dealer", href: "#dealer-section" },
+    { name: "Blogs", href: "#blogs-section" },
+    { name: "Contact", href: "#footer" },
+  ];
+
   return (
     <header className="bg-[#0060AF]">
       <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8 lg:py-4">
@@ -74,23 +86,14 @@ const Navbar = () => {
               } md:static md:translate-x-0 md:flex md:flex-row md:bg-transparent md:items-center md:gap-6`}
             >
               <ul className="flex flex-col items-center justify-center h-full gap-6 text-sm md:flex-row md:gap-6 md:h-auto md:items-center">
-                {[
-                  "About",
-                  "Category",
-                  "Services",
-                  "Colours",
-                  "Downloads",
-                  "Become A Dealer",
-                  "Blogs",
-                  "Contact",
-                ].map((item, index) => (
+                {menuItems.map((item, index) => (
                   <li key={index}>
                     <a
                       onClick={closeMenu}
                       className="text-white transition hover:text-white/75"
-                      href="#"
+                      href={item.href}
                     >
-                      {item}
+                      {item.name}
                     </a>
                   </li>
                 ))}
@@ -98,7 +101,7 @@ const Navbar = () => {
                   <li>
                     <a
                       className="rounded-full bg-gray-100 px-5 py-2.5 text-sm font-medium text-blue-400"
-                      href="#"
+                      href="#footer"
                     >
                       Enquire Now
                     </a>
@@ -112,7 +115,7 @@ const Navbar = () => {
                 <div className="hidden sm:flex">
                   <a
                     className="rounded-full bg-gray-100 px-5 py-2.5 text-sm font-medium text-blue-400"
-                    href="#"
+                    href="#footer"
                   >
                     Enquire Now
                   </a>
@@ -127,3 +130,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

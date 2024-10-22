@@ -7,7 +7,7 @@ import tweet from "@/assets/twitter.png";
 
 const Footer = () => {
   return (
-    <footer className="py-16 -my-3 text-white bg-[url('https://astral-paints-landing.vercel.app/Images/footer/footer.png')] bg-cover bg-center">
+    <footer className="py-16 -my-3 text-white bg-[url('https://astral-paints-landing.vercel.app/Images/footer/footer.png')] bg-cover bg-center" id="footer">
       {/* Top Section: Group Companies */}
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <h1 className="mb-11 font-bolder text-center text-white text-[40px]">
@@ -177,9 +177,9 @@ const Footer = () => {
 
       {/* Bottom Links */}
       <div className="flex items-center justify-between pt-8 mx-auto mt-12 border-t border-gray-400 max-w-7xl">
-        <p>© 2024 ALL RIGHTS RESERVED</p>
-        <p className="hover:underline">Privacy Policy</p>
-        <p className="hover:underline">Terms & Conditions</p>
+        <p className="text-sm lg:text-md">© 2024 ALL RIGHTS RESERVED</p>
+        <p className="text-sm hover:underline lg:text-md">Privacy Policy</p>
+        <p className="text-sm hover:underline lg:text-md">Terms & Conditions</p>
       </div>
     </footer>
   );

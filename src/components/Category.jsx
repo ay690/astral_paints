@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Category = ({ categories }) => {
   return (
-    <div className="relative min-h-screen px-4 py-8 mx-auto lg:py-16 lg:px-6">
+    <div className="relative min-h-screen px-4 py-8 mx-auto lg:py-16 lg:px-6" id="category-section">
       {/* Golden gradient line placed absolutely inside the component */}
       <div className="absolute inset-y-0 left-0 w-2 bg-gradient-to-b from-red-500 to-yellow-500"></div>
       <div className="mx-auto max-w-7xl">

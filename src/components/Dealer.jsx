@@ -14,6 +14,7 @@ const Dealer = ({ dealer }) => {
       style={{
         backgroundImage: `url(${homeJoinBackgroundImage.node.sourceUrl})`,
       }}
+      id="dealer-section"
     >
       {/* Left vertical gradient bar */}
       <div className="absolute inset-y-0 left-0 w-2 bg-gradient-to-b from-green-600 to-green-600"></div>

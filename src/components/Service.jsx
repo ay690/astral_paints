@@ -30,7 +30,7 @@ const services = [
 
 const Service = () => {
   return (
-    <div className="relative p-4 mx-auto">
+    <div className="relative p-4 mx-auto" id="services-section">
       {/* Left gradient bar */}
       <div className="absolute inset-y-0 left-0 w-2 h-screen bg-gradient-to-b from-yellow-500 to-green-300"></div>
 

@@ -10,7 +10,7 @@ const About = ({ about }) => {
   } = about;
 
   return (
-    <div className="relative flex flex-col items-center justify-between min-h-screen p-3 max-w-7xl md:flex-row">
+    <div className="relative flex flex-col items-center justify-between min-h-screen p-3 max-w-7xl md:flex-row" id="about-section">
       {/* Gradient border on the left side */}
       <div className="absolute inset-y-0 left-0 w-2 mt-10 bg-gradient-to-b from-red-500 to-red-500 "></div>
       <div className="flex flex-col items-center justify-between min-h-screen p-3 mx-auto max-7xl max-w-7xl md:flex-row">

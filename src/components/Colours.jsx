@@ -14,7 +14,7 @@ const Colours = () => {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <div className="relative p-6 mx-auto">
+    <div className="relative p-6 mx-auto" id="colours-section">
       <div className="absolute inset-y-0 left-0 w-2 bg-gradient-to-b from-green-300 to-green-600"></div>
       <div className="mx-auto max-w-7xl">
         <h2 className="mb-4 text-xl font-semibold">Colours</h2>

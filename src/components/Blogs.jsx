@@ -46,7 +46,7 @@ const blogs = [
 
 const Blogs = () => {
   return (
-    <section className="relative pt-1 mx-auto mb-2">
+    <section className="relative pt-2 mb-2 mx-2auto" id="blogs-section">
       <div className="absolute inset-y-0 left-0 w-2 bg-gradient-to-b from-green-600 to-blue-600"></div>
       <div className="mx-auto my-3 max-w-7xl">
         <div className="container px-4 mx-auto">

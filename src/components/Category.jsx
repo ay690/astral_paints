@@ -3,7 +3,11 @@ import Image from "next/image";
 
 const Category = ({ categories }) => {
   return (
-    <div className="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
+    <div className="relative min-h-screen px-4 py-8 mx-auto lg:py-16 lg:px-6">
+      {/* Golden gradient line placed absolutely inside the component */}
+      <div className="absolute inset-y-0 left-0 w-2 bg-gradient-to-b from-red-500 to-yellow-500"></div>
+      <div className="mx-auto max-w-7xl">
+        
       <div className="mb-10 text-start">
         <h2 className="mb-4 text-xl font-semibold">Category</h2>
         <div className="flex items-center gap-5">
@@ -24,13 +28,13 @@ const Category = ({ categories }) => {
         {categories && categories.length > 0 && (
           <div className="relative mb-6 mr-0 md:mr-8 md:mb-0 group">
             <Image
-              className="w-1/2 mx-auto md:w-full"
+              className="w-1/2 h-full mx-auto rounded-md md:w-full"
               src={categories[0].image.node.sourceUrl}
               alt={categories[0].title}
               width={400}
               height={200}
             />
-            <div className="absolute left-0 right-0 flex items-center justify-between p-2 transition-all duration-300 ease-in-out bottom-5 group-hover:bg-yellow-700">
+            <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-2 transition-all duration-300 ease-in-out group-hover:bg-yellow-700">
               <h3 className="text-xl font-bold text-white text-start">
                 {categories[0].title}
               </h3>
@@ -68,6 +72,7 @@ const Category = ({ categories }) => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

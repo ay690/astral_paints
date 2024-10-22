@@ -10,13 +10,20 @@ const About = ({ about }) => {
   } = about;
 
   return (
-    <div className="flex items-center min-h-screen justify-evenly">
-      <div className="w-full max-w-xl p-8 rounded-lg">
-        <h2 className="mb-4 text-xl font-semibold">{homeAboutSubtitle}</h2>
+    <div className="relative flex flex-col items-center justify-between min-h-screen p-3 max-w-7xl md:flex-row">
+      {/* Gradient border on the left side */}
+      <div className="absolute inset-y-0 left-0 w-2 mt-10 bg-gradient-to-b from-red-500 to-red-500 "></div>
 
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl font-bold">{homeAboutTitle}</h1>
-          <div className="ml-4">
+      <div className="w-full max-w-xl p-8 rounded-lg md:p-16">
+        <h2 className="mb-4 text-xl font-semibold text-center md:text-left">
+          {homeAboutSubtitle}
+        </h2>
+
+        <div className="flex flex-col items-center mb-4 md:flex-row md:justify-between">
+          <h1 className="text-2xl font-bold text-center md:text-left">
+            {homeAboutTitle}
+          </h1>
+          <div className="mt-4 md:mt-0 md:ml-4">
             <Image
               src="https://astral-paints-landing.vercel.app/Images/redline.svg"
               width={100}
@@ -52,7 +59,8 @@ const About = ({ about }) => {
           </a>
         )}
       </div>
-      <div className="w-full max-w-xl p-8 mt-8 bg-yellow-400 rounded-lg shadow-md">
+
+      <div className="w-full max-w-xl p-8 mt-8 bg-yellow-400 rounded-lg shadow-md md:mt-0">
         {/* Display the video image */}
         {homeAboutVideoImage && (
           <Image

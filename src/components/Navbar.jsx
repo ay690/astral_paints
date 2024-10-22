@@ -1,18 +1,37 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef]);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
     <header className="bg-[#0060AF]">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 lg:py-4">
-        <div className="flex h-16 items-center justify-between">
+      <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8 lg:py-4">
+        <div className="flex items-center justify-between h-16">
           <div className="flex-1 md:flex md:items-center md:gap-12">
             <Image
               src="https://astral-paints-landing.vercel.app/_next/image?url=%2FImages%2Flogo.png&w=256&q=75"
@@ -27,7 +46,7 @@ const Navbar = () => {
             <div className="block md:hidden">
               <button
                 onClick={toggleMenu}
-                className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                className="p-2 text-gray-600 transition bg-gray-100 rounded hover:text-gray-600/75"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -48,77 +67,34 @@ const Navbar = () => {
 
             {/* Navigation Links */}
             <nav
+              ref={menuRef}
               aria-label="Global"
-              className={`fixed inset-0 bg-[#0060AF] transition-transform transform ${
+              className={`fixed inset-0 bg-[#0060AF] transition-transform transform z-50 ${
                 isMenuOpen ? "translate-x-0" : "translate-x-full"
               } md:static md:translate-x-0 md:flex md:flex-row md:bg-transparent md:items-center md:gap-6`}
             >
               <ul className="flex flex-col items-center justify-center h-full gap-6 text-sm md:flex-row md:gap-6 md:h-auto md:items-center">
-                <li>
-                  <a
-                    className="text-white transition hover:text-white/75"
-                    href="#"
-                  >
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white transition hover:text-white/75"
-                    href="#"
-                  >
-                    Category
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white transition hover:text-white/75"
-                    href="#"
-                  >
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white transition hover:text-white/75"
-                    href="#"
-                  >
-                    Colours
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white transition hover:text-white/75"
-                    href="#"
-                  >
-                    Downloads
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white transition hover:text-white/75"
-                    href="#"
-                  >
-                    Become A Dealer
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white transition hover:text-white/75"
-                    href="#"
-                  >
-                    Blogs
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white transition hover:text-white/75"
-                    href="#"
-                  >
-                    Contact
-                  </a>
-                </li>
-                {isMenuOpen ? (
+                {[
+                  "About",
+                  "Category",
+                  "Services",
+                  "Colours",
+                  "Downloads",
+                  "Become A Dealer",
+                  "Blogs",
+                  "Contact",
+                ].map((item, index) => (
+                  <li key={index}>
+                    <a
+                      onClick={closeMenu}
+                      className="text-white transition hover:text-white/75"
+                      href="#"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+                {isMenuOpen && (
                   <li>
                     <a
                       className="rounded-full bg-gray-100 px-5 py-2.5 text-sm font-medium text-blue-400"
@@ -127,8 +103,6 @@ const Navbar = () => {
                       Enquire Now
                     </a>
                   </li>
-                ) : (
-                  " "
                 )}
               </ul>
             </nav>

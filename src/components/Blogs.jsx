@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const blogs = [
   {
@@ -60,9 +62,12 @@ const Blogs = () => {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
             {/* First two blogs on the left */}
             <div className="grid grid-rows-2 gap-6">
-              {blogs.slice(0, 2).map((blog) => (
-                <div
+              {blogs.slice(0, 2).map((blog, index) => (
+                <motion.div
                   key={blog.id}
+                  initial={{ opacity: 0, x: -50 }} 
+                  animate={{ opacity: 1, x: 0 }} 
+                  transition={{ duration: 0.5, delay: index * 0.1 }} 
                   className="relative overflow-hidden rounded-lg shadow-lg group"
                 >
                   <Image
@@ -80,7 +85,7 @@ const Blogs = () => {
                       Read More
                     </button>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
@@ -89,8 +94,11 @@ const Blogs = () => {
               {blogs
                 .filter((blog) => blog.isFeatured)
                 .map((blog) => (
-                  <div
+                  <motion.div
                     key={blog.id}
+                    initial={{ opacity: 0, x: -50 }} 
+                    animate={{ opacity: 1, x: 0 }} 
+                    transition={{ duration: 0.5, delay: 0.3 }} 
                     className="relative overflow-hidden rounded-lg shadow-lg h-[400px] md:h-[670px] group"
                   >
                     <Image
@@ -103,22 +111,23 @@ const Blogs = () => {
                     {/* Title and Date */}
                     <div className="absolute bottom-0 left-0 w-full p-4 text-white bg-gradient-to-t from-black via-transparent to-transparent">
                       <span className="block text-sm">{blog.date}</span>
-                      <h4 className="mt-1 text-lg font-semibold">
-                        {blog.title}
-                      </h4>
+                      <h4 className="mt-1 text-lg font-semibold">{blog.title}</h4>
                       <button className="px-4 py-2 mt-3 text-sm text-green-500 rounded-full font-[500] bg-white/75">
                         Read More
                       </button>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
             </div>
 
             {/* Last two blogs on the right */}
             <div className="grid grid-rows-2 gap-6">
-              {blogs.slice(3, 5).map((blog) => (
-                <div
+              {blogs.slice(3, 5).map((blog, index) => (
+                <motion.div
                   key={blog.id}
+                  initial={{ opacity: 0, x: -50 }} 
+                  animate={{ opacity: 1, x: 0 }} 
+                  transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
                   className="relative overflow-hidden rounded-lg shadow-lg group"
                 >
                   <Image
@@ -136,7 +145,7 @@ const Blogs = () => {
                       Read More
                     </button>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -147,4 +156,5 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
 

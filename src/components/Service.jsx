@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -29,10 +30,30 @@ const services = [
 ];
 
 const Service = () => {
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const hoverEffect = {
+    scale: 1.05,
+    transition: { duration: 0.3 },
+  };
+
   return (
-    <div className="relative p-4 mx-auto" id="services-section">
+    <motion.div
+      className="relative p-4 mx-auto"
+      id="services-section"
+      initial="hidden"
+      animate="visible"
+      transition={{ staggerChildren: 0.2 }}
+    >
       {/* Left gradient bar */}
-      <div className="absolute inset-y-0 left-0 w-2 h-screen bg-gradient-to-b from-yellow-500 to-green-300"></div>
+      <motion.div
+        className="absolute inset-y-0 left-0 w-2 h-screen bg-gradient-to-b from-yellow-500 to-green-300"
+        variants={fadeInUp}
+      ></motion.div>
 
       <div className="mx-auto max-w-7xl">
         <h2 className="mb-4 text-xl font-semibold">Services</h2>
@@ -55,9 +76,11 @@ const Service = () => {
         {/* Services grid */}
         <div className="grid grid-cols-1 gap-6 p-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div
+            <motion.div
               key={service.id}
               className="relative flex flex-col justify-end w-full h-64 p-6 overflow-hidden bg-white rounded-lg shadow-md sm:h-72 lg:h-80"
+              variants={fadeInUp}
+              whileHover={hoverEffect}
             >
               <Image
                 src={service.imageUrl}
@@ -79,18 +102,19 @@ const Service = () => {
                 <p className="text-sm text-gray-100 sm:text-base md:text-lg">
                   {service.description}
                 </p>
-                <button className="px-4 py-2 mt-2 font-bold text-gray-800 rounded-full cursor-pointer bg-white/70">
+                <motion.button
+                  className="px-4 py-2 mt-2 font-bold text-gray-800 rounded-full cursor-pointer bg-white/70"
+                  whileHover={{ scale: 1.1 }}
+                >
                   Read More
-                </button>
+                </motion.button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 export default Service;
-
-

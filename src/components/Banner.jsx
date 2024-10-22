@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Banner({ banners }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,12 +31,17 @@ export default function Banner({ banners }) {
       >
         <div className="relative h-56 md:h-[500px] overflow-hidden">
           {banners?.map((banner, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                index === currentIndex ? "opacity-100" : "opacity-0"
-              }`}
-              data-carousel-item
+              className="absolute inset-0"
+              initial={{ opacity: 0, scale: 0.9 }} 
+              animate={
+                index === currentIndex
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.9 }
+              } 
+              transition={{ duration: 0.8, ease: "easeInOut" }} 
+              style={{ display: index === currentIndex ? "block" : "none" }} 
             >
               <Image
                 src={banner.bannerImage.node.sourceUrl}
@@ -46,21 +52,34 @@ export default function Banner({ banners }) {
 
               {/* Overlay content */}
               <div className="absolute ml-5 space-y-3 text-white transform -translate-y-1/2 left-5 top-1/2 md:left-10 md:top-1/2">
-                <h2 className="text-2xl font-bold md:text-4xl">
+                <motion.h2
+                  className="text-2xl font-bold md:text-4xl"
+                  initial={{ opacity: 0, y: -50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                >
                   {banner.bannersTitle}
-                </h2>
-                <p className="text-sm md:text-md font-[700]">
+                </motion.h2>
+                <motion.p
+                  className="text-sm md:text-md font-[700]"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                >
                   {banner.bannerDescription}
-                </p>
-                <a
+                </motion.p>
+                <motion.a
                   href={banner.bannerButton.url}
                   target={banner.bannerButton.target}
                   className="inline-block px-4 py-2 rounded-full text-white-300 bg-white/40 hover:bg-white-700"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.7, duration: 0.8 }}
                 >
                   {banner.bannerButton.title}
-                </a>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

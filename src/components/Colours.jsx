@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const coloursData = [
   { name: "Peach", code: "#f3d9b1", color: "#f3d9b1", special: true },
@@ -31,20 +32,23 @@ const Colours = () => {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
           {coloursData.map((colour, index) => (
-            <div
+            <motion.div
               key={index}
               className={`relative group p-4 rounded-md ${
                 colour.special ? "bg-white shadow-lg" : ""
               }`}
               onMouseEnter={() => setHovered(index)}
               onMouseLeave={() => setHovered(null)}
+              initial={{ opacity: 0, x: -100 }} 
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }} 
             >
               <div
                 className="relative w-full h-40 rounded-md mt-7"
                 style={{ backgroundColor: colour.color }}
               >
                 <div
-                  className="absolute hidden w-10 h-10 border-2 border-white rounded-md lg:block" // Hide on small and medium screens
+                  className="absolute hidden w-10 h-10 border-2 border-white rounded-md lg:block"
                   style={{
                     top: "43%",
                     left: "44%",
@@ -71,7 +75,7 @@ const Colours = () => {
                   <p className="text-lg font-bold">Astral Paints</p>
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -80,3 +84,5 @@ const Colours = () => {
 };
 
 export default Colours;
+
+

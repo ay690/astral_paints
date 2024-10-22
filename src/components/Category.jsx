@@ -28,7 +28,7 @@ const Category = ({ categories }) => {
         {categories && categories.length > 0 && (
           <div className="relative mb-6 mr-0 md:mr-8 md:mb-0 group">
             <Image
-              className="w-1/2 h-full mx-auto rounded-md md:w-full"
+              className="w-full h-full mx-auto rounded-md md:w-full"
               src={categories[0].image.node.sourceUrl}
               alt={categories[0].title}
               width={400}

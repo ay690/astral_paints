@@ -7,13 +7,13 @@ import tweet from "@/assets/twitter.png";
 
 const Footer = () => {
   return (
-    <footer className="py-16 text-white bg-[url('https://astral-paints-landing.vercel.app/Images/footer/footer.png')] bg-cover bg-center">
+    <footer className="py-16 -my-3 text-white bg-[url('https://astral-paints-landing.vercel.app/Images/footer/footer.png')] bg-cover bg-center">
       {/* Top Section: Group Companies */}
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <h1 className="mb-11 font-bolder text-center text-white text-[40px]">
           Group Company
         </h1>
-        <div className="flex flex-wrap justify-center pb-12 space-x-20 border-b border-gray-400">
+        <div className="flex flex-wrap justify-center gap-4 pb-12 space-y-5 border-b border-gray-400 md:space-x-20 lg:space-y-0">
           <Image
             src="https://astral-paints-landing.vercel.app/_next/image?url=%2FImages%2Fcompany%2Fc4.png&w=828&q=75"
             alt="Astral Pipes"
@@ -75,9 +75,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter Email Address"
-                className="w-3/4 px-4 py-1 bg-transparent border border-gray-600 outline-none text-white-800 rounded-l-md"
+                className="w-3/4 px-4 py-1 text-white bg-transparent border border-gray-600 outline-none h-11 rounded-l-md" 
               />
-              <button className="px-2 py-1 text-white bg-blue-500 rounded-r-md">
+              <button className="px-2 py-1 text-sm text-white bg-blue-500 h-11 rounded-r-md">
                 Enquire Now
               </button>
             </div>
@@ -98,7 +98,7 @@ const Footer = () => {
           </div>
 
           {/* Links Section */}
-          <div className="grid max-w-full grid-cols-2 gap-48 md:grid-cols-4">
+          <div className="grid max-w-full grid-cols-2 gap-10 lg:gap-48 md:grid-cols-4">
             <ul className="space-y-2">
               <li className="font-bold whitespace-nowrap hover:underline">
                 About

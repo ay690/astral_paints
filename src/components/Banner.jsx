@@ -28,11 +28,11 @@ export default function Banner({ banners }) {
         className="relative w-full"
         data-carousel="slide"
       >
-        <div className="relative h-56 overflow-hidden rounded-lg md:min-h-[500px]">
+        <div className="relative h-56 md:h-[500px] overflow-hidden">
           {banners?.map((banner, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
                 index === currentIndex ? "opacity-100" : "opacity-0"
               }`}
               data-carousel-item
@@ -45,9 +45,13 @@ export default function Banner({ banners }) {
               />
 
               {/* Overlay content */}
-              <div className="absolute ml-5 space-y-3 text-white transform -translate-y-1/2 left-5 top-1/2">
-                <h2 className="text-4xl font-bold">{banner.bannersTitle}</h2>
-                <p className="text-md font-[700]">{banner.bannerDescription}</p>
+              <div className="absolute ml-5 space-y-3 text-white transform -translate-y-1/2 left-5 top-1/2 md:left-10 md:top-1/2">
+                <h2 className="text-2xl font-bold md:text-4xl">
+                  {banner.bannersTitle}
+                </h2>
+                <p className="text-sm md:text-md font-[700]">
+                  {banner.bannerDescription}
+                </p>
                 <a
                   href={banner.bannerButton.url}
                   target={banner.bannerButton.target}
@@ -81,7 +85,7 @@ export default function Banner({ banners }) {
         alt="rainbow"
         width={10}
         height={70}
-        className="absolute w-full -mt-64 opacity-95"
+        className="absolute w-full -mt-16 sm:-mt-48 lg:-mt-64 opacity-95"
       />
     </>
   );

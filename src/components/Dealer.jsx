@@ -10,22 +10,30 @@ const Dealer = ({ dealer }) => {
 
   return (
     <section
-      className="flex items-center justify-center h-[350px] bg-center bg-cover mb-10 mt-5"
+      className="flex items-center justify-center h-[350px] bg-center bg-cover relative"
       style={{
         backgroundImage: `url(${homeJoinBackgroundImage.node.sourceUrl})`,
       }}
     >
-      <div className="px-6 text-center text-white">
-        <h2 className="mb-4 text-lg md:text-xl">{homeJoinSubtitle}</h2>
+      {/* Left vertical gradient bar */}
+      <div className="absolute inset-y-0 left-0 w-2 bg-gradient-to-b from-green-600 to-green-600"></div>
 
-        <p className="mb-4 text-2xl font-semibold md:text-4xl">
+      {/* Content container */}
+      <div className="px-4 text-center text-white sm:px-6">
+        <h2 className="mb-2 text-lg md:text-xl lg:text-xl">
+          {homeJoinSubtitle}
+        </h2>
+
+        <p className="mb-2 text-2xl font-semibold md:text-3xl lg:text-4xl">
           {homeJoinTitle}
         </p>
-        <p className="mb-4 text-xl font-[300] md:text-2xl max-w-[800px] mx-auto">
+
+        <p className="mb-4 text-sm font-light md:text-xl lg:text-xl max-w-[700px] mx-auto">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit autem
           sunt alias doloribus fuga explicabo!
         </p>
-        <button className="px-4 py-2 font-[400] text-black bg-white rounded-full">
+
+        <button className="px-4 py-2 font-medium text-black bg-white rounded-full hover:bg-gray-200 focus:ring-2 focus:ring-green-500">
           {homeJoinButton.title}
         </button>
       </div>

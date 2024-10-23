@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import client from "@/lib/apollo-client";
 import { GET_HOME_PAGE_DATA } from "@/lib/queries";
 import {
@@ -10,6 +11,7 @@ import {
   About,
   Category,
   Dealer,
+  Loader,
 } from "@/components";
 import "../app/globals.css";
 
@@ -38,6 +40,19 @@ export default function Home({
   categories,
   dealer,
 }) {
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div>
       <Navbar />

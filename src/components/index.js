@@ -7,5 +7,17 @@ import Category from "./Category";
 import Colours from "./Colours";
 import Service from "./Service";
 import Dealer from "./Dealer";
+import Loader from "./Loader";
 
-export { Banner, Blogs, Navbar, Footer, About, Category, Service, Colours, Dealer };
+export {
+  Loader,
+  Banner,
+  Blogs,
+  Navbar,
+  Footer,
+  About,
+  Category,
+  Service,
+  Colours,
+  Dealer,
+};
